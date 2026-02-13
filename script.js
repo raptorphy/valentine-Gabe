@@ -49,7 +49,7 @@ function updateStars() {
 const button = document.getElementById("valentinesButton");
 
 button.addEventListener("click", () => {
-  // Reliable check for button click
+  
   if (button.textContent.includes("Click Me!")) {
     button.textContent = "Luv u! ❤️";
     alert("See you on Monday! 🥰");
@@ -75,7 +75,7 @@ function drawText() {
     context.shadowOffsetX = 0;
     context.shadowOffsetY = 0;
 
-    // Helper for darker green color
+    
     let darkGreen = (op) => `rgba(0, 150, 0, ${op})`;
 
     if(frameNumber < 250){
