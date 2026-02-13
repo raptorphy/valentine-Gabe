@@ -51,12 +51,12 @@ function updateStars() {
 const button = document.getElementById("valentinesButton");
 
 button.addEventListener("click", () => {
-  if (button.textContent === "Click Me! ❤") {
+  if (button.textContent === "Invitation Warning! Click Me! ❤") {
     // This changes the button text immediately instead of trying to send an email
-    button.textContent = "I love you too! ❤️";
+    button.textContent = "I luv uuu hehe! ❤️";
     
     // Optional: Make the button do something extra, like a pop-up
-    alert("Yay! Happy Valentine's Day! 🥰");
+    alert("Yay! see you on Monday my penguin! 🥰");
   }
 });
 
@@ -181,24 +181,12 @@ function drawText() {
         if (window.innerWidth < 600) {
             drawTextWithLineBreaks(["I love you so much Gabe, more than", "all the time and space in the universe can contain"], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
         } else {
-            context.fillText("I love you so much Gabe, more than all the time and space in the universe can contain", canvas.width/2, canvas.height/2);
+            context.fillText("I love you so much Gabe Baum, more than all the time and space in the universe can contain", canvas.width/2, canvas.height/2);
         }
 
         opacity = opacity + 0.01;
     }
     
-    if(frameNumber >= 2750 && frameNumber < 99999){
-        context.fillStyle = `rgba(45, 45, 255, ${secondOpacity})`;
-
-
-        if (window.innerWidth < 600) {
-            drawTextWithLineBreaks(["and I can't wait to spend all the time in", "the world to share that love with you!"], canvas.width / 2, (canvas.height/2 + 60), fontSize, lineHeight);
-        } else {
-            context.fillText("and I can't wait to spend all the time in the world to share that love with you!", canvas.width/2, (canvas.height/2 + 50));
-        }
-
-        secondOpacity = secondOpacity + 0.01;
-    }
 
     if(frameNumber >= 3000 && frameNumber < 99999){
         context.fillStyle = `rgba(45, 45, 255, ${thirdOpacity})`;
