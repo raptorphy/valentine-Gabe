@@ -1,32 +1,39 @@
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000; /* Ensures the background stays black */
+}
+
+canvas {
+    display: block; /* Removes any weird gaps */
+    width: 100vw;  /* Full width of the screen */
+    height: 100vh; /* Full height of the screen */
+    background: #000; 
+}
+
 #valentinesButton {
     display: none;
     position: absolute;
-    
-    /* Box Colors - Darker Green */
     background-color: #006400; /* Dark Green */
-    border: 2px solid #008000; /* Slightly lighter green border */
+    border: 2px solid #008000;
     color: #fff;
-    
     cursor: pointer;
     height: 50px;
-    padding: 0 30px; /* Added padding to give the text room */
+    padding: 0 20px;
     font-size: 16px;
     font-family: "Comic Sans MS", cursive, sans-serif;
     border-radius: 10px;
-    
-    /* Positioning */
-    top: calc(50% + 150px); 
+    top: 80%; /* Moves it toward the bottom so it doesn't cover text */
     left: 50%;
     transform: translateX(-50%);
-    
-    /* Effects */
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 0 10px rgba(0, 150, 0, 0.4); /* Subtle green glow */
+    z-index: 999; /* Ensures the button stays on top of the stars */
 }
 
 #valentinesButton:hover {
-    background-color: #008000; /* Brightens when you touch it */
-    color: #eee;
-    box-shadow: 0 0 20px rgba(0, 255, 127, 0.6); /* Stronger glow on hover */
-    transform: translateX(-50%) scale(1.05); /* Slight "pop" effect */
+    background-color: #008000;
+    box-shadow: 0 0 20px rgba(0, 255, 127, 0.6);
 }
