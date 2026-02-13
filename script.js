@@ -51,11 +51,13 @@ function updateStars() {
 const button = document.getElementById("valentinesButton");
 
 button.addEventListener("click", () => {
-  if (button.textContent === "Invitation Warning! Click Me! ❤") {
-    // This changes the button text immediately instead of trying to send an email
+  // .includes() is better than === because it ignores extra spaces or emoji differences
+  if (button.textContent.includes("Invitation Warning")) {
+    
+    // Change the text
     button.textContent = "I luv uuu hehe! ❤️";
     
-    // Optional: Make the button do something extra, like a pop-up
+    // Show the pop-up
     alert("Yay! see you on Monday my penguin! 🥰");
   }
 });
