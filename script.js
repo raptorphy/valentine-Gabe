@@ -53,10 +53,10 @@ const button = document.getElementById("valentinesButton");
 button.addEventListener("click", () => {
   if (button.textContent === "Click Me! ❤") {
     // This changes the button text immediately instead of trying to send an email
-    button.textContent = "I love you too! ❤️";
+    button.textContent = "Luv u! ❤️";
     
     // Optional: Make the button do something extra, like a pop-up
-    alert("Yay! Happy Valentine's Day! 🥰");
+    alert("See you on Monday! 🥰");
   }
 });
 
