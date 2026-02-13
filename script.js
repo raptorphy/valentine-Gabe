@@ -4,7 +4,7 @@ canvas.height = window.innerHeight;
 
 var context = canvas.getContext("2d");
 var stars = 500;
-var colorrange = [0, 60, 240]; // Note: these are the star colors (Red, Yellow, Blue)
+var colorrange = [0, 60, 240];
 var starArray = [];
 
 function getRandom(min, max) {
@@ -49,7 +49,7 @@ function updateStars() {
 const button = document.getElementById("valentinesButton");
 
 button.addEventListener("click", () => {
-  // Using .includes makes this more reliable than ===
+  // Reliable check for button click
   if (button.textContent.includes("Click Me!")) {
     button.textContent = "Luv u! ❤️";
     alert("See you on Monday! 🥰");
@@ -69,22 +69,22 @@ function drawText() {
     context.font = fontSize + "px Comic Sans MS";
     context.textAlign = "center";
     
-    // CHANGED TO GREEN GLOW
-    context.shadowColor = "rgba(0, 255, 127, 1)";
+    // DARKER GREEN GLOW
+    context.shadowColor = "rgba(0, 150, 0, 1)";
     context.shadowBlur = 8;
     context.shadowOffsetX = 0;
     context.shadowOffsetY = 0;
 
-    // GREEN TEXT COLOR APPLIED BELOW
-    let greenColor = (op) => `rgba(0, 255, 127, ${op})`;
+    // Helper for darker green color
+    let darkGreen = (op) => `rgba(0, 150, 0, ${op})`;
 
     if(frameNumber < 250){
-        context.fillStyle = greenColor(opacity);
+        context.fillStyle = darkGreen(opacity);
         context.fillText("everyday day I cannot believe how lucky I am", canvas.width/2, canvas.height/2);
         opacity = opacity + 0.01;
     }
     if(frameNumber >= 250 && frameNumber < 500){
-        context.fillStyle = greenColor(opacity);
+        context.fillStyle = darkGreen(opacity);
         context.fillText("everyday day I cannot believe how lucky I am", canvas.width/2, canvas.height/2);
         opacity = opacity - 0.01;
     }
@@ -93,7 +93,7 @@ function drawText() {
         opacity = 0;
     }
     if(frameNumber > 500 && frameNumber < 750){
-        context.fillStyle = greenColor(opacity);
+        context.fillStyle = darkGreen(opacity);
         if (window.innerWidth < 600) {
             drawTextWithLineBreaks(["amongst trillions and trillions of stars,", "over billions of years"], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
         } else {
@@ -102,7 +102,7 @@ function drawText() {
         opacity = opacity + 0.01;
     }
     if(frameNumber >= 750 && frameNumber < 1000){
-        context.fillStyle = greenColor(opacity);
+        context.fillStyle = darkGreen(opacity);
         if (window.innerWidth < 600) {
             drawTextWithLineBreaks(["amongst trillions and trillions of stars,", "over billions of years"], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
         } else {
@@ -115,12 +115,12 @@ function drawText() {
         opacity = 0;
     }
     if(frameNumber > 1000 && frameNumber < 1250){
-        context.fillStyle = greenColor(opacity);
+        context.fillStyle = darkGreen(opacity);
         context.fillText("to be alive, and to get to spend this life with you", canvas.width/2, canvas.height/2);
         opacity = opacity + 0.01;
     }
     if(frameNumber >= 1250 && frameNumber < 1500){
-        context.fillStyle = greenColor(opacity);
+        context.fillStyle = darkGreen(opacity);
         context.fillText("to be alive, and to get to spend this life with you", canvas.width/2, canvas.height/2);
         opacity = opacity - 0.01;
     }
@@ -129,12 +129,12 @@ function drawText() {
         opacity = 0;
     }
     if(frameNumber > 1500 && frameNumber < 1750){
-        context.fillStyle = greenColor(opacity);
+        context.fillStyle = darkGreen(opacity);
         context.fillText("is so incredibly, unfathomably unlikely", canvas.width/2, canvas.height/2);
         opacity = opacity + 0.01;
     }
     if(frameNumber >= 1750 && frameNumber < 2000){
-        context.fillStyle = greenColor(opacity);
+        context.fillStyle = darkGreen(opacity);
         context.fillText("is so incredibly, unfathomably unlikely", canvas.width/2, canvas.height/2);
         opacity = opacity - 0.01;
     }
@@ -143,7 +143,7 @@ function drawText() {
         opacity = 0;
     }
     if(frameNumber > 2000 && frameNumber < 2250){
-        context.fillStyle = greenColor(opacity);
+        context.fillStyle = darkGreen(opacity);
         if (window.innerWidth < 600) {
             drawTextWithLineBreaks(["and yet here I am to get the impossible", "chance to get to know you"], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
         } else {
@@ -152,7 +152,7 @@ function drawText() {
         opacity = opacity + 0.01;
     }
     if(frameNumber >= 2250 && frameNumber < 2500){
-        context.fillStyle = greenColor(opacity);
+        context.fillStyle = darkGreen(opacity);
         if (window.innerWidth < 600) {
             drawTextWithLineBreaks(["and yet here I am to get the impossible", "chance to get to know you"], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
         } else {
@@ -165,7 +165,7 @@ function drawText() {
         opacity = 0;
     }
     if(frameNumber > 2500 && frameNumber < 99999){
-        context.fillStyle = greenColor(opacity);
+        context.fillStyle = darkGreen(opacity);
         if (window.innerWidth < 600) {
             drawTextWithLineBreaks(["I love you so much Gabe, more than", "all the time and space in the universe can contain"], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
         } else {
@@ -175,14 +175,13 @@ function drawText() {
     }
 
     if(frameNumber >= 3000 && frameNumber < 99999){
-        context.fillStyle = greenColor(thirdOpacity);
+        context.fillStyle = darkGreen(thirdOpacity);
         context.fillText("Happy Valentine's Day <3", canvas.width/2, (canvas.height/2 + 120));
         thirdOpacity = thirdOpacity + 0.01;
         button.style.display = "block";
     }   
 
      context.shadowColor = "transparent";
-     context.shadowBlur = 0;
 }
 
 function draw() {
