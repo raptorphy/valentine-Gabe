@@ -1,34 +1,32 @@
-html, body {
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden;
-    cursor: url('./images/pointer.png'), auto;
-}
-
-canvas {
-    width: 100%;
-    height: auto;
-    background: #111;
-}
-
 #valentinesButton {
     display: none;
     position: absolute;
-    background-color: #2d2dff;
-    border: 2px solid #2d2dff;
+    
+    /* Box Colors - Darker Green */
+    background-color: #006400; /* Dark Green */
+    border: 2px solid #008000; /* Slightly lighter green border */
     color: #fff;
+    
     cursor: pointer;
     height: 50px;
+    padding: 0 30px; /* Added padding to give the text room */
     font-size: 16px;
     font-family: "Comic Sans MS", cursive, sans-serif;
     border-radius: 10px;
-    top: calc(50% + 150px); /* Adjust based on canvas height and text position */
+    
+    /* Positioning */
+    top: calc(50% + 150px); 
     left: 50%;
     transform: translateX(-50%);
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-  }
+    
+    /* Effects */
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 150, 0, 0.4); /* Subtle green glow */
+}
 
-  #valentinesButton:hover {
-    background-color: #1f1faa;
+#valentinesButton:hover {
+    background-color: #008000; /* Brightens when you touch it */
     color: #eee;
+    box-shadow: 0 0 20px rgba(0, 255, 127, 0.6); /* Stronger glow on hover */
+    transform: translateX(-50%) scale(1.05); /* Slight "pop" effect */
 }
