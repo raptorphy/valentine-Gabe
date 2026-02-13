@@ -5,6 +5,7 @@ html, body {
     height: 100%;
     overflow: hidden;
     background-color: #000; /* Ensures the background stays black */
+    cursor: url('./images/pointer.png'), auto;
 }
 
 canvas {
